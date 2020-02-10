@@ -173,8 +173,8 @@ class LanguageIdentifier(object):
   def from_modelstring(cls, string, *args, **kwargs):
     b = base64.b64decode(string)
     z = bz2.decompress(b)
-    nb_ptc, nb_pc, nb_classes, tk_nextmove, tk_output = model
-    nb_numfeats = int(len(nb_ptc) / len(nb_pc))
+    nb_ptc, nb_pc, nb_classes, tk_nextmove, tk_output = [], [], None, None, None
+    nb_numfeats = 0
 
     # reconstruct pc and ptc
     nb_pc = np.array(nb_pc)
